@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details - Culina AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Culina<span>AI</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background-glow"></div>
+
+    <main class="container" style="margin: 2rem auto; max-width: 900px;">
+        <div id="recipe-detail-container">
+            <div class="loader" id="detail-loader">
+                <div class="spinner"></div>
+                <p>Fetching recipe details...</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="recipe.js"></script>
+</body>
+
+</html>

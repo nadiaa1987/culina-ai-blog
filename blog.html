@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Culina AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Culina<span>AI</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html" class="active">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background-glow"></div>
+
+    <main class="blog-container">
+        <header class="header">
+            <h1 class="logo">Recipe <span>Blog</span></h1>
+            <p class="subtitle">Explore all our AI-generated culinary creations</p>
+        </header>
+
+        <section id="blog-grid" class="blog-grid">
+            <!-- Recipes will be injected here -->
+            <div class="loader" id="blog-loader">
+                <div class="spinner"></div>
+                <p>Loading recipes...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script type="module" src="blog.js"></script>
+</body>
+
+</html>
