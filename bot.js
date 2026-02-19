@@ -22,6 +22,42 @@ const FEEDS = [
 
 const API_KEY = 'sk_UOsZKtGMSYNskyHUmwbWTQEdYPKv2UxR';
 
+// PINTEREST CONFIG (Ghadi t-ziydhoum f GitHub Secrets mn ba3d)
+const PINTEREST_ACCESS_TOKEN = process.env.PINTEREST_TOKEN || 'YOUR_PINTEREST_TOKEN';
+const PINTEREST_BOARD_ID = process.env.PINTEREST_BOARD_ID || 'YOUR_BOARD_ID';
+const SITE_URL = 'https://nadiaa1987.github.io/culina-ai-blog'; // Link d l-site dyalk
+
+async function pinToPinterest(title, imageUrl, slug) {
+    console.log(`📌 Pinning to Pinterest: ${title}`);
+    try {
+        const response = await fetch('https://api.pinterest.com/v5/pins', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${PINTEREST_ACCESS_TOKEN}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "title": title,
+                "description": `Master the art of ${title}. Exclusive 1500-word gourmet guide on CulinaAI. #food #recipe #cooking`,
+                "link": `${SITE_URL}/recipe.html?slug=${slug}`,
+                "media_source": {
+                    "source_type": "image_url",
+                    "url": imageUrl
+                },
+                "board_id": PINTEREST_BOARD_ID
+            })
+        });
+        const data = await response.json();
+        if (data.id) {
+            console.log(`✅ Pinterest Success: Pin Created (ID: ${data.id})`);
+        } else {
+            console.error(`❌ Pinterest Error:`, data);
+        }
+    } catch (err) {
+        console.error(`❌ Pinterest API Failed:`, err.message);
+    }
+}
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -84,6 +120,9 @@ async function runBot() {
             });
 
             console.log(`✅ Published: ${item.title}`);
+
+            // 🔥 Automatical Pin to Pinterest
+            await pinToPinterest(item.title, imageUrls[0], slug);
             // Wait 5s to avoid rate limits
             await new Promise(r => setTimeout(r, 5000));
 

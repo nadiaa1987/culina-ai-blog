@@ -18,3 +18,6 @@ jobs:
         run: npm install firebase node-fetch
       - name: Run CulinaAI Bot
         run: node bot.js
+        env:
+          PINTEREST_TOKEN: ${{ secrets.PINTEREST_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
