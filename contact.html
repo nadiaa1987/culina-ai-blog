@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Pasta Recipes Healthy</title>
+    <title>Contact Us - Pasta Recipes Healthy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,35 +19,33 @@
             <a href="index.html" class="nav-logo">Pasta Recipes<span> Healthy</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
             </div>
         </div>
     </nav>
-
     <div class="background-glow"></div>
 
-    <main class="blog-container">
-        <header class="header">
-            <h1 class="logo">Pasta <span>Blog</span></h1>
-            <p class="subtitle">Explore all our AI-generated culinary creations</p>
-        </header>
+    <main class="container">
+        <section class="result-card" style="margin-top: 4rem; padding: 3rem; text-align: center;">
+            <h1>Get in Touch</h1>
+            <p class="subtitle">Have questions or partnership ideas?</p>
 
-        <section id="blog-grid" class="blog-grid">
-            <!-- Recipes will be injected here -->
-            <div class="loader" id="blog-loader">
-                <div class="spinner"></div>
-                <p>Loading recipes...</p>
+            <div class="result-content" style="margin-top: 2rem;">
+                <div class="article-image" style="max-width: 200px; margin: 0 auto 2rem;">
+                    <img src="https://api.iconify.design/lucide:mail.svg?color=%236366f1"
+                        style="filter: brightness(1.5);">
+                </div>
+                <p>Feel free to reach out to our culinary support team. We generally respond within 24-48 business
+                    hours.</p>
+                <div style="margin: 2rem 0; padding: 2rem; background: rgba(99,102,241,0.1); border-radius: 20px;">
+                    <h3 style="color: var(--accent-color);">Email Address</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600;"><a href="mailto:contact@nursingtestbank.eu"
+                            style="color: white; text-decoration: none;">contact@nursingtestbank.eu</a></p>
+                </div>
+                <p>Website: <a href="index.html" style="color: var(--accent-color);">Pasta Recipes Healthy</a></p>
             </div>
         </section>
     </main>
-
-    <!-- Recipe Modal -->
-    <div id="recipe-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
 
     <footer class="footer-legal">
         <div class="footer-content">
@@ -79,8 +77,6 @@
             <p>Designed with <span style="color: var(--accent-color);">♥</span> for Pasta Lovers</p>
         </div>
     </footer>
-
-    <script type="module" src="blog.js"></script>
 </body>
 
 </html>
