@@ -1,0 +1,20 @@
+name: Daily Recipe Sync
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Kiti-runna kola lila f l-fajr (00:00 UTC)
+  workflow_dispatch: # Bach t-qdar t-khdmou manualy ila bghiti
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        run: npm install firebase node-fetch
+      - name: Run CulinaAI Bot
+        run: node bot.js
